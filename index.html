@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    </link>
+    <script src="index.js"></script>
+
+</head>
+
+
+<body>
+    <div class="container">
+
+        <div id="form">
+            <div id="google">
+                <img src="google.png" alt="google" />
+                <h3>Create your Google Account</h3>
+            </div>
+            <fieldset>
+
+                <form id="mainform" onsubmit="alert('submitted')">
+                    <div class="fifty">
+                        <input type="text" class="hundred" value="" required placeholder="First Name" />
+                        <p class="warning">Enter First Name</p>
+                    </div>
+
+                    <div class="fifty">
+                        <input type="text" class="hundred" required placeholder="Last Name" />
+                        <p class="warning">Enter Last Name</p>
+                    </div>
+
+                    <div class="hundred">
+                        <input class="hundred" type="email" required placeholder="Username" />
+                        <p class="warning">Enter Your Email</p>
+                        <p class="hint">You can use letters, numbers and periods </p>
+                        <a href="#">Use my current email address instead</a>
+                    </div>
+
+                    <div class="fifty">
+                        <input type="password" class="hundred" id="p1" class="password" minlength="2" required
+                            placeholder="Password" />
+                        <p class="warning">Enter Password</p>
+
+                    </div>
+
+                    <div class="fifty">
+                        <input type="password" class="hundred" id="p2" class="password" minlength="2" required
+                            placeholder="Confirm" />
+                        <p class="warning">Confirm Password</p>
+
+                    </div>
+                    <div id="confirmation" class="hundred">
+
+
+                    </div>
+                    <div class="hundred">
+                        <p class="hint">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+                        </br>
+                    </div>
+
+                    <div class="hundred" id="last">
+
+
+                        <button type="submit" onclick="return check()">Next </button>
+
+                        <a href="#">Sign in instead</a>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+
+        <div id="image">
+            <img src="account.svg" alt="google image" />
+            <strong>One account. All of google working for you.</strong>
+
+
+
+        </div>
+
+    </div>
+
+    <div id="check">
+
+    </div>
+
+</body>
+
+</html>
