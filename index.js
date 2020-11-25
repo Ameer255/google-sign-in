@@ -21,6 +21,13 @@ function validate() {
 
     }
 
+    let password1 = document.getElementById("p1").value;
+    let password2 = document.getElementById("p2").value;
+
+    if(password1 != password2){
+        return false;
+    }
+
 }
 
 let password2;
@@ -43,7 +50,6 @@ const handleChange = () => {
     if (password1 != "" && password2.value != "" && password1 != password2.value) {
         confirmationWarning.innerHTML = "<p>Your Password Don't Match</p>";
         
-        return false;
     }
 
     else {
