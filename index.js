@@ -1,31 +1,56 @@
-function check(){
-   
-   
-    var x=document.getElementById("form");
- var y=   x.getElementsByTagName("input");
+function validate() {
 
- for (i=0; i<y.length; i++)
- {
-if (y[i].value=="")
-{
-    y[i].style.border="2px solid red";
 
-    var a=x.getElementsByClassName("warning");
-    
-        a[i].style="display: block;";
-      
-    
-}
-  
-}
+    let warnings = document.getElementsByClassName("warning");
+    let inputs = document.getElementsByTagName("input");
 
-var b=document.getElementById("p1");
-var c=document.getElementById("p2");
-var z=document.getElementById("confirmation");
-if (b.value!= "" && b.value!=c.value){
-z.innerHTML="<p>Your Password Don't Match</p>";
-return false;
+    for (i = 0; i < inputs.length; i++) {
+
+        if (inputs[i].value == "") {
+            inputs[i].style.border = "2px solid red";
+
+            warnings[i].style = "display: block;";
+
+        }
+        else {
+            warnings[i].style = "display: none;";
+            inputs[i].style.border = "2px solid black";
+
+        }
+
+
+    }
 
 }
 
+let password2;
+let confirmationWarning;
+
+
+
+window.onload = function () {
+
+    password2 = document.getElementById("p2");
+    confirmationWarning = document.getElementById("confirmation");
+    password2.addEventListener(("keyup"), handleChange);
+
 }
+
+
+const handleChange = () => {
+
+    let password1 = document.getElementById("p1").value;
+    if (password1 != "" && password2.value != "" && password1 != password2.value) {
+        confirmationWarning.innerHTML = "<p>Your Password Don't Match</p>";
+        
+        return false;
+    }
+
+    else {
+        confirmationWarning.innerHTML = "";
+       
+    }
+
+
+}
+
